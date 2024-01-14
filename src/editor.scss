@@ -4,6 +4,39 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-sg-typing-text-block {
-	border: 1px dotted #f00;
+:root {
+	--color-default-typing-text: #78c2ad;
+}
+
+@keyframes sg-typed-blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.sg-typing-text-wrapper {
+	font-weight: 600;
+	margin: 0;
+	padding: 1.375rem 0 0.313rem;
+}
+
+.sg-typing-text {
+	text-decoration: underline var(--color-default-typing-text) 0.17em;
+	text-underline-offset: 0.455em;
+}
+
+.sg-typing-text-cursor {
+	opacity: 1;
+	&.hide {
+		display: none;
+	}
+	&.blink {
+		animation: sg-typed-blink 0.7s infinite;
+	}
 }

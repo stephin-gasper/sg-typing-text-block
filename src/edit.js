@@ -13,6 +13,8 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
+import classNames from 'classnames';
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -20,6 +22,8 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+
+import useTypewriter from './useTypeWriter';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -30,12 +34,28 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit() {
+	const strings = [ 'String 1', 'String 2', 'String 3', 'String 4' ];
+	const { typedText, isTypingPaused, continueLoop } = useTypewriter( {
+		strings,
+	} );
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Sg Typing Text Block - hello from the editor!',
-				'sg-typing-text-block'
-			) }
-		</p>
+		<div { ...useBlockProps() }>
+			<p className="sg-typing-text-wrapper">
+				{ __( "I'm ", 'sg-typing-text-block' ) }
+				<span className="sg-typing-text">
+					{ typedText }
+					<span
+						aria-hidden="true"
+						className={ classNames( 'sg-typing-text-cursor', {
+							blink: isTypingPaused,
+							hide: ! continueLoop,
+						} ) }
+					>
+						|
+					</span>
+				</span>
+			</p>
+		</div>
 	);
 }
