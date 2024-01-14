@@ -4,9 +4,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-:root {
-	--color-default-typing-text: #78c2ad;
-}
+$default-color: #78c2ad;
 
 @keyframes sg-typed-blink {
 	0% {
@@ -27,7 +25,7 @@
 }
 
 .sg-typing-text {
-	text-decoration: underline var(--color-default-typing-text) 0.17em;
+	text-decoration: underline $default-color 0.17em;
 	text-underline-offset: 0.455em;
 }
 

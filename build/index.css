@@ -6,10 +6,6 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-:root {
-  --color-default-typing-text: #78c2ad;
-}
-
 @keyframes sg-typed-blink {
   0% {
     opacity: 1;
@@ -28,8 +24,8 @@
 }
 
 .sg-typing-text {
-  -webkit-text-decoration: underline var(--color-default-typing-text) 0.17em;
-          text-decoration: underline var(--color-default-typing-text) 0.17em;
+  -webkit-text-decoration: underline #78c2ad 0.17em;
+          text-decoration: underline #78c2ad 0.17em;
   text-underline-offset: 0.455em;
 }
 
