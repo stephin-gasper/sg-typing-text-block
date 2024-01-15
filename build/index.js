@@ -114,9 +114,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 
 /**
@@ -148,12 +147,12 @@ const useTypewriter = ({
   deleteSpeed = 100,
   isLoop = true
 }) => {
-  const [stringIndex, setStringIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-  const [text, setText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-  const [isDeleting, setIsDeleting] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [isPaused, setIsPaused] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [continueLoop, setContinueLoop] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+  const [stringIndex, setStringIndex] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const [text, setText] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const [isDeleting, setIsDeleting] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [isPaused, setIsPaused] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [continueLoop, setContinueLoop] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const type = () => {
       const currentString = strings[stringIndex];
       // Determine the function to be performed
@@ -238,6 +237,17 @@ module.exports = window["wp"]["blockEditor"];
 
 "use strict";
 module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["element"];
 
 /***/ }),
 

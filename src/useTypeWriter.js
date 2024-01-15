@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from '@wordpress/element';
 
 /**
  * @typedef {Object} TypeWriterValues

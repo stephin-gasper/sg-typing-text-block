@@ -12,7 +12,6 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
-
 import classNames from 'classnames';
 
 /**
@@ -22,7 +21,6 @@ import classNames from 'classnames';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
-
 import useTypewriter from './useTypeWriter';
 
 /**
