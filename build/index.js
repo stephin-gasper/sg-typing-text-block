@@ -54,16 +54,31 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
+ * @param {Object} props            - props object
+ * @param {Object} props.attributes - data stored by block
+ *
  * @return {Element} Element to render.
  */
-function Edit() {
-  const strings = ['String 1', 'String 2', 'String 3', 'String 4'];
+function Edit({
+  attributes
+}) {
+  const {
+    strings,
+    pauseTime,
+    typeSpeed,
+    deleteSpeed,
+    loop
+  } = attributes;
   const {
     typedText,
     isTypingPaused,
     continueLoop
   } = (0,_useTypeWriter__WEBPACK_IMPORTED_MODULE_5__["default"])({
-    strings
+    strings,
+    pauseTime,
+    typeSpeed,
+    deleteSpeed,
+    loop
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
@@ -133,10 +148,10 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @param {Object}   params             - Typewriter data
  * @param {string[]} params.strings     - Array of strings to be shown
- * @param {number}   params.pauseTime   - Determine the pause time after typing animation is complete. Defaults to 1500ms
- * @param {number}   params.typeSpeed   - Determine the delay when each letter is typed. Defaults to 150ms
- * @param {number}   params.deleteSpeed - Determine the delay when each letter is deleted. Defaults to 150ms
- * @param {boolean}  params.isLoop      - Determine whether to loop through the strings continously. Defaults to true
+ * @param {number}   params.pauseTime   - Pause time after typing animation is complete. Defaults to 1500ms
+ * @param {number}   params.typeSpeed   - Delay before each letter is typed. Defaults to 150ms
+ * @param {number}   params.deleteSpeed - Delay before each letter is deleted. Defaults to 100ms
+ * @param {boolean}  params.loop        - Determine whether to loop through the strings continously. Defaults to true
  *
  * @return {TypeWriterValues} Typewriter effect values
  */
@@ -145,7 +160,7 @@ const useTypewriter = ({
   pauseTime = 1500,
   typeSpeed = 150,
   deleteSpeed = 100,
-  isLoop = true
+  loop = true
 }) => {
   const [stringIndex, setStringIndex] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   const [text, setText] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
@@ -161,7 +176,7 @@ const useTypewriter = ({
       setText(current => currentString.substring(0, current.length - shouldDelete));
       // Determine if this string is complete
       if (!isDeleting && text === currentString) {
-        if (!isLoop && stringIndex === strings.length - 1) {
+        if (!loop && stringIndex === strings.length - 1) {
           setContinueLoop(false);
           return;
         }
@@ -183,7 +198,7 @@ const useTypewriter = ({
         clearTimeout(timer);
       }
     };
-  }, [stringIndex, isDeleting, text, strings, deleteSpeed, typeSpeed, pauseTime, isLoop, continueLoop]);
+  }, [stringIndex, isDeleting, text, strings, deleteSpeed, typeSpeed, pauseTime, loop, continueLoop]);
   return {
     typedText: text,
     isTypingPaused: isPaused,
@@ -355,7 +370,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","keywords":["typing text","typing effect","typewriter"],"icon":"smiley","description":"Display typewriter animation for text.","example":{},"supports":{"html":false},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","keywords":["typing text","typing effect","typewriter"],"description":"Display typewriter animation for text.","example":{},"attributes":{"strings":{"type":"array","default":["String 1","String 2","String 3"]},"pauseTime":{"type":"number","default":1500},"typeSpeed":{"type":"number","default":150},"deleteSpeed":{"type":"number","default":100},"loop":{"type":"boolean","default":true}},"supports":{"html":false},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ })
 

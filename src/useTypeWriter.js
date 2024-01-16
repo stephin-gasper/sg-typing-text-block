@@ -15,10 +15,10 @@ import { useEffect, useState } from '@wordpress/element';
  *
  * @param {Object}   params             - Typewriter data
  * @param {string[]} params.strings     - Array of strings to be shown
- * @param {number}   params.pauseTime   - Determine the pause time after typing animation is complete. Defaults to 1500ms
- * @param {number}   params.typeSpeed   - Determine the delay when each letter is typed. Defaults to 150ms
- * @param {number}   params.deleteSpeed - Determine the delay when each letter is deleted. Defaults to 150ms
- * @param {boolean}  params.isLoop      - Determine whether to loop through the strings continously. Defaults to true
+ * @param {number}   params.pauseTime   - Pause time after typing animation is complete. Defaults to 1500ms
+ * @param {number}   params.typeSpeed   - Delay before each letter is typed. Defaults to 150ms
+ * @param {number}   params.deleteSpeed - Delay before each letter is deleted. Defaults to 100ms
+ * @param {boolean}  params.loop        - Determine whether to loop through the strings continously. Defaults to true
  *
  * @return {TypeWriterValues} Typewriter effect values
  */
@@ -27,7 +27,7 @@ const useTypewriter = ( {
 	pauseTime = 1500,
 	typeSpeed = 150,
 	deleteSpeed = 100,
-	isLoop = true,
+	loop = true,
 } ) => {
 	const [ stringIndex, setStringIndex ] = useState( 0 );
 	const [ text, setText ] = useState( '' );
@@ -46,7 +46,7 @@ const useTypewriter = ( {
 			);
 			// Determine if this string is complete
 			if ( ! isDeleting && text === currentString ) {
-				if ( ! isLoop && stringIndex === strings.length - 1 ) {
+				if ( ! loop && stringIndex === strings.length - 1 ) {
 					setContinueLoop( false );
 					return;
 				}
@@ -80,7 +80,7 @@ const useTypewriter = ( {
 		deleteSpeed,
 		typeSpeed,
 		pauseTime,
-		isLoop,
+		loop,
 		continueLoop,
 	] );
 

@@ -29,12 +29,19 @@ import useTypewriter from './useTypeWriter';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
+ * @param {Object} props            - props object
+ * @param {Object} props.attributes - data stored by block
+ *
  * @return {Element} Element to render.
  */
-export default function Edit() {
-	const strings = [ 'String 1', 'String 2', 'String 3', 'String 4' ];
+export default function Edit( { attributes } ) {
+	const { strings, pauseTime, typeSpeed, deleteSpeed, loop } = attributes;
 	const { typedText, isTypingPaused, continueLoop } = useTypewriter( {
 		strings,
+		pauseTime,
+		typeSpeed,
+		deleteSpeed,
+		loop,
 	} );
 
 	return (

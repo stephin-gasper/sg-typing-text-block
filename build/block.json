@@ -10,9 +10,34 @@
     "typing effect",
     "typewriter"
   ],
-  "icon": "smiley",
   "description": "Display typewriter animation for text.",
   "example": {},
+  "attributes": {
+    "strings": {
+      "type": "array",
+      "default": [
+        "String 1",
+        "String 2",
+        "String 3"
+      ]
+    },
+    "pauseTime": {
+      "type": "number",
+      "default": 1500
+    },
+    "typeSpeed": {
+      "type": "number",
+      "default": 150
+    },
+    "deleteSpeed": {
+      "type": "number",
+      "default": 100
+    },
+    "loop": {
+      "type": "boolean",
+      "default": true
+    }
+  },
   "supports": {
     "html": false
   },
