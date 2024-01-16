@@ -13,6 +13,10 @@
   "description": "Display typewriter animation for text.",
   "example": {},
   "attributes": {
+    "prefix": {
+      "type": "string",
+      "default": "I am "
+    },
     "strings": {
       "type": "array",
       "default": [

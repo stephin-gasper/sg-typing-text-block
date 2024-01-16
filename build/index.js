@@ -1,6 +1,93 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/components/InspectorControls.js":
+/*!*********************************************!*\
+  !*** ./src/components/InspectorControls.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+/**
+ * Add controls to settings sidebar
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @param {Object} props               - props object
+ * @param {Object} props.attributes    - data stored by block
+ * @param {Object} props.setAttributes - set data to be stored in block
+ *
+ * @return {Element} Element to render.
+ */
+const Controls = ({
+  attributes,
+  setAttributes
+}) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+  title: 'Settings'
+}, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Prefix Text', 'sg-typing-text-block'),
+  placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add prefix text', 'sg-typing-text-block'),
+  value: attributes.prefix,
+  onChange: prefix => setAttributes({
+    prefix
+  })
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Typing speed', 'sg-typing-text-block'),
+  help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select delay before each letter is typed', 'sg-typing-text-block'),
+  value: attributes.typeSpeed,
+  onChange: typeSpeed => setAttributes({
+    typeSpeed
+  }),
+  min: 1,
+  max: 1000
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Delete speed', 'sg-typing-text-block'),
+  help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select delay before each letter is deleted', 'sg-typing-text-block'),
+  value: attributes.deleteSpeed,
+  onChange: deleteSpeed => setAttributes({
+    deleteSpeed
+  }),
+  min: 1,
+  max: 1000
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Pause time', 'sg-typing-text-block'),
+  help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select pause time after typing animation is complete', 'sg-typing-text-block'),
+  value: attributes.pauseTime,
+  onChange: pauseTime => setAttributes({
+    pauseTime
+  }),
+  min: 0,
+  step: 100,
+  max: 3000
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+  label: "Loop",
+  help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Repeats the given sentences', 'sg-typing-text-block'),
+  checked: attributes.loop,
+  onChange: loop => setAttributes({
+    loop
+  })
+})));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Controls);
+
+/***/ }),
+
 /***/ "./src/edit.js":
 /*!*********************!*\
   !*** ./src/edit.js ***!
@@ -14,37 +101,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _useTypeWriter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useTypeWriter */ "./src/useTypeWriter.js");
-
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _useTypeWriter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useTypeWriter */ "./src/useTypeWriter.js");
+/* harmony import */ var _components_InspectorControls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/InspectorControls */ "./src/components/InspectorControls.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 
 
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+
 
 
 
@@ -54,15 +121,18 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
- * @param {Object} props            - props object
- * @param {Object} props.attributes - data stored by block
+ * @param {Object} props               - props object
+ * @param {Object} props.attributes    - data stored by block
+ * @param {Object} props.setAttributes - set data to be stored in block
  *
  * @return {Element} Element to render.
  */
 function Edit({
-  attributes
+  attributes,
+  setAttributes
 }) {
   const {
+    prefix,
     strings,
     pauseTime,
     typeSpeed,
@@ -73,7 +143,7 @@ function Edit({
     typedText,
     isTypingPaused,
     continueLoop
-  } = (0,_useTypeWriter__WEBPACK_IMPORTED_MODULE_5__["default"])({
+  } = (0,_useTypeWriter__WEBPACK_IMPORTED_MODULE_3__["default"])({
     strings,
     pauseTime,
     typeSpeed,
@@ -81,14 +151,17 @@ function Edit({
     loop
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)()
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_InspectorControls__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    attributes: attributes,
+    setAttributes: setAttributes
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "sg-typing-text-wrapper"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("I'm ", 'sg-typing-text-block'), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, prefix, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sg-typing-text"
   }, typedText, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     "aria-hidden": "true",
-    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()('sg-typing-text-cursor', {
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()('sg-typing-text-cursor', {
       blink: isTypingPaused,
       hide: !continueLoop
     })
@@ -255,6 +328,17 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -370,7 +454,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","keywords":["typing text","typing effect","typewriter"],"description":"Display typewriter animation for text.","example":{},"attributes":{"strings":{"type":"array","default":["String 1","String 2","String 3"]},"pauseTime":{"type":"number","default":1500},"typeSpeed":{"type":"number","default":150},"deleteSpeed":{"type":"number","default":100},"loop":{"type":"boolean","default":true}},"supports":{"html":false},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","keywords":["typing text","typing effect","typewriter"],"description":"Display typewriter animation for text.","example":{},"attributes":{"prefix":{"type":"string","default":"I am "},"strings":{"type":"array","default":["String 1","String 2","String 3"]},"pauseTime":{"type":"number","default":1500},"typeSpeed":{"type":"number","default":150},"deleteSpeed":{"type":"number","default":100},"loop":{"type":"boolean","default":true}},"supports":{"html":false},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ })
 

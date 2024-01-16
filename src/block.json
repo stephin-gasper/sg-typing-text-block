@@ -9,6 +9,10 @@
 	"description": "Display typewriter animation for text.",
 	"example": {},
 	"attributes": {
+		"prefix": {
+			"type": "string",
+			"default": "I am "
+		},
 		"strings": {
 			"type": "array",
 			"default": [ "String 1", "String 2", "String 3" ]

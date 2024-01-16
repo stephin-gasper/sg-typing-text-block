@@ -1,27 +1,9 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
 import { useBlockProps } from '@wordpress/block-editor';
 import classNames from 'classnames';
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
 import useTypewriter from './useTypeWriter';
+import InspectorControls from './components/InspectorControls';
+import './editor.scss';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,13 +11,15 @@ import useTypewriter from './useTypeWriter';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
- * @param {Object} props            - props object
- * @param {Object} props.attributes - data stored by block
+ * @param {Object} props               - props object
+ * @param {Object} props.attributes    - data stored by block
+ * @param {Object} props.setAttributes - set data to be stored in block
  *
  * @return {Element} Element to render.
  */
-export default function Edit( { attributes } ) {
-	const { strings, pauseTime, typeSpeed, deleteSpeed, loop } = attributes;
+export default function Edit( { attributes, setAttributes } ) {
+	const { prefix, strings, pauseTime, typeSpeed, deleteSpeed, loop } =
+		attributes;
 	const { typedText, isTypingPaused, continueLoop } = useTypewriter( {
 		strings,
 		pauseTime,
@@ -46,8 +30,12 @@ export default function Edit( { attributes } ) {
 
 	return (
 		<div { ...useBlockProps() }>
+			<InspectorControls
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+			/>
 			<p className="sg-typing-text-wrapper">
-				{ __( "I'm ", 'sg-typing-text-block' ) }
+				{ prefix }
 				<span className="sg-typing-text">
 					{ typedText }
 					<span
