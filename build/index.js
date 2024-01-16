@@ -355,7 +355,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","icon":"smiley","description":"Display typewriter animation for text.","example":{},"supports":{"html":false},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","keywords":["typing text","typing effect","typewriter"],"icon":"smiley","description":"Display typewriter animation for text.","example":{},"supports":{"html":false},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ })
 

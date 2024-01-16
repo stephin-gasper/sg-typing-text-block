@@ -5,6 +5,11 @@
   "version": "0.1.0",
   "title": "Typing Text Block",
   "category": "widgets",
+  "keywords": [
+    "typing text",
+    "typing effect",
+    "typewriter"
+  ],
   "icon": "smiley",
   "description": "Display typewriter animation for text.",
   "example": {},
