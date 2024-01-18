@@ -1,10 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import {
-	PanelBody,
-	RangeControl,
-	TextControl,
-	ToggleControl,
-} from '@wordpress/components';
+import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
 
 import { InspectorControls } from '@wordpress/block-editor';
 
@@ -20,12 +15,6 @@ import { InspectorControls } from '@wordpress/block-editor';
 const Controls = ( { attributes, setAttributes } ) => (
 	<InspectorControls>
 		<PanelBody title={ 'Settings' }>
-			<TextControl
-				label={ __( 'Prefix Text', 'sg-typing-text-block' ) }
-				placeholder={ __( 'Add prefix text', 'sg-typing-text-block' ) }
-				value={ attributes.prefix }
-				onChange={ ( prefix ) => setAttributes( { prefix } ) }
-			/>
 			<RangeControl
 				label={ __( 'Typing speed', 'sg-typing-text-block' ) }
 				help={ __(
