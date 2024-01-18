@@ -1,8 +1,10 @@
+import { useState } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
 import classNames from 'classnames';
 
 import useTypewriter from './useTypeWriter';
 import InspectorControls from './components/InspectorControls';
+import BlockControls from './components/BlockControls';
 import './editor.scss';
 
 /**
@@ -20,6 +22,11 @@ import './editor.scss';
 export default function Edit( { attributes, setAttributes } ) {
 	const { prefix, strings, pauseTime, typeSpeed, deleteSpeed, loop } =
 		attributes;
+
+	// Use internal state instead of a ref to make sure that the component
+	// re-renders when the popover's anchor updates.
+	const [ popoverAnchor, setPopoverAnchor ] = useState( null );
+
 	const { typedText, isTypingPaused, continueLoop } = useTypewriter( {
 		strings,
 		pauseTime,
@@ -30,11 +37,16 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<div { ...useBlockProps() }>
+			<BlockControls
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+				popoverAnchor={ popoverAnchor }
+			/>
 			<InspectorControls
 				attributes={ attributes }
 				setAttributes={ setAttributes }
 			/>
-			<p className="sg-typing-text-wrapper">
+			<p className="sg-typing-text-wrapper" ref={ setPopoverAnchor }>
 				{ prefix }
 				<span className="sg-typing-text">
 					{ typedText }

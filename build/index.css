@@ -6,6 +6,7 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+/* Preview */
 @keyframes sg-typed-blink {
   0% {
     opacity: 1;
@@ -35,6 +36,36 @@
 }
 .sg-typing-text-cursor.blink {
   animation: sg-typed-blink 0.7s infinite;
+}
+
+/* Toolbar */
+.sgtt-dropdown__content > .components-popover__content {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.sgtt-popover-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sgtt-popover-header__action {
+  height: 24px;
+}
+
+.sgtt-popover-header__heading {
+  line-height: 1.2;
+  margin: 0px;
+  font-size: 13px;
+}
+
+.sgtt-textarea-control-wrapper {
+  min-width: 350px;
 }
 
 /*# sourceMappingURL=index.css.map*/
