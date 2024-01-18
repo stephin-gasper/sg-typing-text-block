@@ -4,40 +4,13 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	TextareaControl,
-	TextControl,
 	ToolbarDropdownMenu,
-	MenuGroup,
-	MenuItem,
 } from '@wordpress/components';
-import { chevronDown, edit, insertBefore } from '@wordpress/icons';
+import { chevronDown, edit } from '@wordpress/icons';
 import { __ } from '@wordpress/i18n';
 
 import CustomDropdown from './CustomDropdown';
-
-const AdditionalOptionsMenu = ( {
-	popoverProps,
-	attributes,
-	setAttributes,
-} ) => (
-	<MenuGroup>
-		<CustomDropdown
-			popoverProps={ popoverProps }
-			content={
-				<TextControl
-					value={ attributes.prefix }
-					onChange={ ( prefix ) => setAttributes( { prefix } ) }
-				/>
-			}
-			headerTitle={ __( 'Prefix Text', 'sg-typing-text-block' ) }
-			toggleProps={ {
-				as: MenuItem,
-				icon: insertBefore,
-				children: __( 'Prefix text', 'sg-typing-text-block' ),
-				iconPosition: 'left',
-			} }
-		/>
-	</MenuGroup>
-);
+import AdditionalOptionsMenu from './AdditionalOptionsMenu';
 
 const Controls = ( { attributes, setAttributes, popoverAnchor } ) => {
 	// Memoize popoverProps to avoid returning a new object every time.

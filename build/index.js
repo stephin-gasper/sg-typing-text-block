@@ -147,6 +147,55 @@ const pencil = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_p
 
 /***/ }),
 
+/***/ "./src/components/BlockControls/AdditionalOptionsMenu.js":
+/*!***************************************************************!*\
+  !*** ./src/components/BlockControls/AdditionalOptionsMenu.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AdditionalOptionsMenu)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/insert-before.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _CustomDropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CustomDropdown */ "./src/components/BlockControls/CustomDropdown.js");
+
+
+
+
+
+function AdditionalOptionsMenu({
+  popoverProps,
+  attributes,
+  setAttributes
+}) {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.MenuGroup, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_CustomDropdown__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    popoverProps: popoverProps,
+    content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      value: attributes.prefix,
+      onChange: prefix => setAttributes({
+        prefix
+      })
+    }),
+    headerTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Prefix Text', 'sg-typing-text-block'),
+    toggleProps: {
+      as: _wordpress_components__WEBPACK_IMPORTED_MODULE_1__.MenuItem,
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Prefix text', 'sg-typing-text-block'),
+      iconPosition: 'left'
+    }
+  }));
+}
+
+/***/ }),
+
 /***/ "./src/components/BlockControls/CustomDropdown.js":
 /*!********************************************************!*\
   !*** ./src/components/BlockControls/CustomDropdown.js ***!
@@ -275,12 +324,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/insert-before.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/edit.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/chevron-down.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _CustomDropdown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CustomDropdown */ "./src/components/BlockControls/CustomDropdown.js");
+/* harmony import */ var _AdditionalOptionsMenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AdditionalOptionsMenu */ "./src/components/BlockControls/AdditionalOptionsMenu.js");
 
 
 
@@ -288,26 +337,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const AdditionalOptionsMenu = ({
-  popoverProps,
-  attributes,
-  setAttributes
-}) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.MenuGroup, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_CustomDropdown__WEBPACK_IMPORTED_MODULE_5__["default"], {
-  popoverProps: popoverProps,
-  content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    value: attributes.prefix,
-    onChange: prefix => setAttributes({
-      prefix
-    })
-  }),
-  headerTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Prefix Text', 'sg-typing-text-block'),
-  toggleProps: {
-    as: _wordpress_components__WEBPACK_IMPORTED_MODULE_3__.MenuItem,
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
-    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Prefix text', 'sg-typing-text-block'),
-    iconPosition: 'left'
-  }
-}));
+
 const Controls = ({
   attributes,
   setAttributes,
@@ -317,7 +347,7 @@ const Controls = ({
   const popoverProps = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => ({
     anchor: popoverAnchor
   }), [popoverAnchor]);
-  const renderToolbarMenuContent = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AdditionalOptionsMenu, {
+  const renderToolbarMenuContent = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_AdditionalOptionsMenu__WEBPACK_IMPORTED_MODULE_6__["default"], {
     popoverProps: popoverProps,
     attributes: attributes,
     setAttributes: setAttributes
