@@ -6,30 +6,15 @@ import {
 	ToolbarButton,
 	TextareaControl,
 	TextControl,
-	Button,
 	ToolbarDropdownMenu,
 	MenuGroup,
 	MenuItem,
 } from '@wordpress/components';
-import { chevronDown, edit, closeSmall, insertBefore } from '@wordpress/icons';
+import { chevronDown, edit, insertBefore } from '@wordpress/icons';
 import { DOWN } from '@wordpress/keycodes';
 import { __ } from '@wordpress/i18n';
 
-const PopoverHeader = ( { onClose, title } ) => {
-	return (
-		<div className="sgtt-popover-header">
-			{ title ? (
-				<h2 className="sgtt-popover-header__heading">{ title }</h2>
-			) : null }
-			<Button
-				className="sgtt-popover-header__action"
-				label={ __( 'Close', 'sg-typing-text-block' ) }
-				icon={ closeSmall }
-				onClick={ onClose }
-			/>
-		</div>
-	);
-};
+import PopoverHeader from './PopoverHeader';
 
 const CustomDropdown = ( {
 	popoverProps,
