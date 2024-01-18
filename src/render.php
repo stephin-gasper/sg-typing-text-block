@@ -1,9 +1,7 @@
 <?php
 /**
- * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
+ * Render the typing text block
  */
 ?>
 
-<p <?php echo get_block_wrapper_attributes(); ?>>
-	<?php esc_html_e( 'Sg Typing Text Block - hello from the editor!', 'sg-typing-text-block' ); ?>
-</p>
+<div <?php echo get_block_wrapper_attributes(); ?>></div>
