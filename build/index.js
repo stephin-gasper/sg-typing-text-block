@@ -463,6 +463,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/**
+ * Add controls to block toolbar
+ *
+ * @param {Object}  props               - props object
+ * @param {Object}  props.attributes    - data stored by block
+ * @param {Object}  props.setAttributes - set data to be stored in block
+ * @param {Element} props.popoverAnchor - reference to anchor element
+ *
+ * @return {Element} Element to render.
+ */
 const Controls = ({
   attributes,
   setAttributes,
