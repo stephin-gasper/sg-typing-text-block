@@ -20,7 +20,7 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
-	const { prefix, strings, pauseTime, typeSpeed, deleteSpeed, loop } =
+	const { prefix, strings, pauseTime, typeSpeed, deleteSpeed, loop, suffix } =
 		attributes;
 
 	// Use internal state instead of a ref to make sure that the component
@@ -60,6 +60,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						|
 					</span>
 				</span>
+				{ suffix }
 			</p>
 		</div>
 	);

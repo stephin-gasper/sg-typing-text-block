@@ -32,6 +32,9 @@
 		"loop": {
 			"type": "boolean",
 			"default": true
+		},
+		"suffix": {
+			"type": "string"
 		}
 	},
 	"supports": {

@@ -5,9 +5,7 @@ import { __ } from '@wordpress/i18n';
 export default function PopoverHeader( { onClose, title } ) {
 	return (
 		<div className="sgtt-popover-header">
-			{ title ? (
-				<h2 className="sgtt-popover-header__heading">{ title }</h2>
-			) : null }
+			<h2 className="sgtt-popover-header__heading">{ title }</h2>
 			<Button
 				className="sgtt-popover-header__action"
 				label={ __( 'Close', 'sg-typing-text-block' ) }

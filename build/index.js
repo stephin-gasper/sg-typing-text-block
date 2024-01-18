@@ -85,6 +85,37 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@wordpress/icons/build-module/library/insert-after.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/insert-after.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__);
+
+/**
+ * WordPress dependencies
+ */
+
+const insertAfter = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "-2 -2 24 24"
+}, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.Path, {
+  d: "M9 12h2v-2h2V8h-2V6H9v2H7v2h2v2zm1 4c3.9 0 7-3.1 7-7s-3.1-7-7-7-7 3.1-7 7 3.1 7 7 7zm0-12c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5zM3 19h14v-2H3v2z"
+}));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (insertAfter);
+//# sourceMappingURL=insert-after.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@wordpress/icons/build-module/library/insert-before.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@wordpress/icons/build-module/library/insert-before.js ***!
@@ -241,6 +272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/insert-before.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/insert-after.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _CustomDropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CustomDropdown */ "./src/components/block-controls/CustomDropdown.js");
@@ -267,6 +299,21 @@ function AdditionalOptionsMenu({
       as: _wordpress_components__WEBPACK_IMPORTED_MODULE_1__.MenuItem,
       icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
       children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Prefix text', 'sg-typing-text-block'),
+      iconPosition: 'left'
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_CustomDropdown__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    popoverProps: popoverProps,
+    content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+      value: attributes.suffix,
+      onChange: suffix => setAttributes({
+        suffix
+      })
+    }),
+    headerTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Suffix Text', 'sg-typing-text-block'),
+    toggleProps: {
+      as: _wordpress_components__WEBPACK_IMPORTED_MODULE_1__.MenuItem,
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Suffix text', 'sg-typing-text-block'),
       iconPosition: 'left'
     }
   }));
@@ -371,9 +418,9 @@ function PopoverHeader({
 }) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "sgtt-popover-header"
-  }, title ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "sgtt-popover-header__heading"
-  }, title) : null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+  }, title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "sgtt-popover-header__action",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Close', 'sg-typing-text-block'),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -509,7 +556,8 @@ function Edit({
     pauseTime,
     typeSpeed,
     deleteSpeed,
-    loop
+    loop,
+    suffix
   } = attributes;
 
   // Use internal state instead of a ref to make sure that the component
@@ -546,7 +594,7 @@ function Edit({
       blink: isTypingPaused,
       hide: !continueLoop
     })
-  }, "|"))));
+  }, "|")), suffix));
 }
 
 /***/ }),
@@ -857,7 +905,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","keywords":["typing text","typing effect","typewriter"],"description":"Display typewriter animation for text.","example":{},"attributes":{"prefix":{"type":"string","default":"I am "},"strings":{"type":"array","default":["String 1","String 2","String 3"]},"pauseTime":{"type":"number","default":1500},"typeSpeed":{"type":"number","default":150},"deleteSpeed":{"type":"number","default":100},"loop":{"type":"boolean","default":true}},"supports":{"html":false,"align":true},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"sg-block/typing-text-block","version":"0.1.0","title":"Typing Text Block","category":"widgets","keywords":["typing text","typing effect","typewriter"],"description":"Display typewriter animation for text.","example":{},"attributes":{"prefix":{"type":"string","default":"I am "},"strings":{"type":"array","default":["String 1","String 2","String 3"]},"pauseTime":{"type":"number","default":1500},"typeSpeed":{"type":"number","default":150},"deleteSpeed":{"type":"number","default":100},"loop":{"type":"boolean","default":true},"suffix":{"type":"string"}},"supports":{"html":false,"align":true},"textdomain":"sg-typing-text-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","render":"file:./render.php"}');
 
 /***/ })
 
