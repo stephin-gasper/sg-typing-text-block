@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import useTypewriter from './useTypeWriter';
 import InspectorControls from './components/InspectorControls';
-import BlockControls from './components/BlockControls';
+import BlockControls from './components/block-controls';
 import './editor.scss';
 
 /**
