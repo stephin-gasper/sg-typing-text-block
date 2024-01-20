@@ -42,7 +42,12 @@ const useTypewriter = ( {
 			const shouldDelete = isDeleting ? 1 : -1;
 			// Create the new text
 			setText( ( current ) =>
-				currentString.substring( 0, current.length - shouldDelete )
+				currentString
+					? currentString.substring(
+							0,
+							current.length - shouldDelete
+					  )
+					: current
 			);
 			// Determine if this string is complete
 			if ( ! isDeleting && text === currentString ) {
@@ -64,9 +69,10 @@ const useTypewriter = ( {
 				);
 			}
 		};
-		const timer = continueLoop
-			? setTimeout( type, isDeleting ? deleteSpeed : typeSpeed )
-			: null;
+		const timer =
+			strings.length && continueLoop
+				? setTimeout( type, isDeleting ? deleteSpeed : typeSpeed )
+				: null;
 		return () => {
 			if ( timer ) {
 				clearTimeout( timer );

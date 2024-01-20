@@ -48,18 +48,20 @@ export default function Edit( { attributes, setAttributes } ) {
 			/>
 			<p className="sg-typing-text-wrapper" ref={ setPopoverAnchor }>
 				{ prefix }
-				<span className="sg-typing-text">
-					{ typedText }
-					<span
-						aria-hidden="true"
-						className={ classNames( 'sg-typing-text-cursor', {
-							blink: isTypingPaused,
-							hide: ! continueLoop,
-						} ) }
-					>
-						|
+				{ strings.length ? (
+					<span className="sg-typing-text">
+						{ typedText }
+						<span
+							aria-hidden="true"
+							className={ classNames( 'sg-typing-text-cursor', {
+								blink: isTypingPaused,
+								hide: ! continueLoop,
+							} ) }
+						>
+							|
+						</span>
 					</span>
-				</span>
+				) : null }
 				{ suffix }
 			</p>
 		</div>

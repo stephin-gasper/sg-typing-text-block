@@ -3,7 +3,6 @@ import { BlockControls } from '@wordpress/block-editor';
 import {
 	ToolbarGroup,
 	ToolbarButton,
-	TextareaControl,
 	ToolbarDropdownMenu,
 } from '@wordpress/components';
 import { chevronDown, edit } from '@wordpress/icons';
@@ -11,14 +10,15 @@ import { __ } from '@wordpress/i18n';
 
 import CustomDropdown from './CustomDropdown';
 import AdditionalOptionsMenu from './AdditionalOptionsMenu';
+import SortableRepeaterText from './SortableRepeaterText';
 
 /**
  * Add controls to block toolbar
  *
- * @param {Object}  props               - props object
- * @param {Object}  props.attributes    - data stored by block
- * @param {Object}  props.setAttributes - set data to be stored in block
- * @param {Element} props.popoverAnchor - reference to anchor element
+ * @param {Object}   props               Props object.
+ * @param {Object}   props.attributes    Available block attributes.
+ * @param {Function} props.setAttributes Function that updates individual attributes.
+ * @param {Element}  props.popoverAnchor Reference to anchor element.
  *
  * @return {Element} Element to render.
  */
@@ -28,6 +28,10 @@ const Controls = ( { attributes, setAttributes, popoverAnchor } ) => {
 		() => ( { anchor: popoverAnchor } ),
 		[ popoverAnchor ]
 	);
+
+	const updateStrings = ( texts ) => {
+		setAttributes( { strings: texts } );
+	};
 
 	const renderToolbarMenuContent = () => (
 		<AdditionalOptionsMenu
@@ -43,18 +47,9 @@ const Controls = ( { attributes, setAttributes, popoverAnchor } ) => {
 				<CustomDropdown
 					popoverProps={ popoverProps }
 					content={
-						<TextareaControl
-							className="sgtt-textarea-control-wrapper"
-							help={ __(
-								'Text to animate',
-								'sg-typing-text-block'
-							) }
-							value={ attributes.strings.join( ' | ' ) }
-							onChange={ ( text ) =>
-								setAttributes( {
-									strings: text.split( ' | ' ),
-								} )
-							}
+						<SortableRepeaterText
+							texts={ attributes.strings }
+							updateTexts={ updateStrings }
 						/>
 					}
 					headerTitle={ __( 'Texts', 'sg-typing-text-block' ) }

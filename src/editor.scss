@@ -4,7 +4,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-$default-color: #78c2ad;
+$color-underline: #78c2ad;
+$color-border: #e3e8ed;
+$color-active: #1a71ff;
 
 /* Preview */
 @keyframes sg-typed-blink {
@@ -24,7 +26,7 @@ $default-color: #78c2ad;
 }
 
 .sg-typing-text {
-	text-decoration: underline $default-color 0.17em;
+	text-decoration: underline $color-underline 0.17em;
 	text-underline-offset: 0.455em;
 }
 
@@ -63,6 +65,73 @@ $default-color: #78c2ad;
 	font-size: 13px;
 }
 
-.sgtt-textarea-control-wrapper {
-	min-width: 350px;
+/* #Sortable text */
+
+$item-inner-spacing: 8px 8px 8px 6px;
+$repeater-bg-color: white;
+$repeater-border-radius: 4px;
+
+.sgtt-sortable-repeater-text {
+	border: 1px solid $color-border;
+	border-radius: $repeater-border-radius;
+	background-color: $repeater-bg-color;
+}
+
+.sgtt-sortable-repeater-text-item {
+	border-bottom: 1px solid $color-border;
+	padding: $item-inner-spacing;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	justify-content: space-between;
+	width: 100%;
+	&.active {
+		border-radius: $repeater-border-radius;
+		background-color: $repeater-bg-color;
+		border: 1px solid $color-active;
+	}
+}
+
+.sgtt-sortable-repeater-text-item__field {
+	min-width: 250px;
+	& > .components-base-control__field {
+		margin-bottom: 0;
+	}
+}
+
+@mixin btn-icon-reset {
+	&.has-icon {
+		min-width: 0;
+		padding: 0;
+		height: initial;
+	}
+}
+
+.sgtt-sortable-repeater-text-item__drag-handle {
+	@include btn-icon-reset;
+	&:focus:not(:disabled) {
+		outline: 0;
+		box-shadow: none;
+	}
+	&:hover,
+	&.active,
+	&.active:focus:not(:disabled),
+	&.active:not(:disabled,[aria-disabled=true]):active {
+		color: $color-active;
+	}
+}
+
+.sgtt-sortable-repeater-text-item__delete {
+	@include btn-icon-reset;
+	margin-left: 5px;
+}
+
+.sgtt-sortable-repeater-text-appender {
+	text-align: right;
+	padding: $item-inner-spacing;
+}
+
+.sgtt-sortable-repeater-text-appender__action {
+	@include btn-icon-reset;
+	border-radius: 2px;
 }
