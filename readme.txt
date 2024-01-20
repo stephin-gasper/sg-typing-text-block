@@ -10,46 +10,55 @@ A Gutenberg block for showing typewriter animation for text.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+Create eye-catching animated typing text for your website when the block is used within the Wordpress Gutenberg editor. Useful for showing multiple texts, each text replacing old one with typewriter effect.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+== Features ==
+- **Content**: Interactive interface for adding texts which can be deleted and dragged to change position
+- **Prefix and Suffix**: Add prefix and suffix text around the typing.
+- **Options**: Configure the typing such as Type Speed, Delete Speed, Pause time, enable/disable Loop.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+= Common: =
+1. Clone or download the repository to your local machine.
+2. Navigate to the block folder using the command line: `cd sg-typing-text-block`.
+3. Install the required dependencies using: `npm install`.
+4. Build the block using: `npm run build`.
+5. Zip the necessary files for plugin: `npm run plugin-zip`.
+6. Rename the zip file to sg-typing-text-block.zip
 
-e.g.
+= Upload: =
+1. In your admin area, go to the Plugins menu and click on **Add New**
+2. Click on **Upload Plugin** and choose the **`sg-typing-text-block.zip`** file and click on **Install Now**
+3. Activate the plugin and Enjoy!
 
-1. Upload the plugin files to the `/wp-content/plugins/sg-typing-text-block` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
+= Manually: =
+1. Extract and Upload the **sg-typing-text-block** plugin to the **`/wp-content/plugins/`** directory
+2. Activate the plugin through the Plugins menu in WordPress
 
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Is Typing Text Block free? =
 
-An answer to that question.
+Yes, Typing Text Block is a free Gutenberg block plugin.
 
-= What about foo bar? =
+= Does it work with any WordPress theme? =
 
-Answer to foo bar dilemma.
+Yes, it will work with any standard WordPress theme.
+
+= Can I change block settings? =
+
+Yes, you can change block settings from the Gutenberg block editor’s right sidebar and toolbar.
+
+= How many times can I reuse a block? =
+
+You can use unlimited times as you want.
 
 == Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
 
 == Changelog ==
 
 = 0.1.0 =
 * Release
 
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
