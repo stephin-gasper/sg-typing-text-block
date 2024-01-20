@@ -1,16 +1,18 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
-
 import { InspectorControls } from '@wordpress/block-editor';
 
 /**
- * Add controls to settings sidebar
+ * Add controls to settings sidebar.
  *
- * @param {Object} props               - props object
- * @param {Object} props.attributes    - data stored by block
- * @param {Object} props.setAttributes - set data to be stored in block
+ * @param {Object}   props               Props object.
+ * @param {Object}   props.attributes    Available block attributes.
+ * @param {Function} props.setAttributes Function that updates individual attributes.
  *
- * @return {Element} Element to render.
+ * @return {import('react').ReactElement} Element to render.
  */
 const Controls = ( { attributes, setAttributes } ) => (
 	<InspectorControls>

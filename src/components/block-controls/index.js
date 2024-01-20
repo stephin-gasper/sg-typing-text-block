@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { useMemo } from '@wordpress/element';
 import { BlockControls } from '@wordpress/block-editor';
 import {
@@ -8,6 +11,9 @@ import {
 import { chevronDown, edit } from '@wordpress/icons';
 import { __ } from '@wordpress/i18n';
 
+/**
+ * Internal dependencies
+ */
 import CustomDropdown from './CustomDropdown';
 import AdditionalOptionsMenu from './AdditionalOptionsMenu';
 import SortableRepeaterText from './SortableRepeaterText';
@@ -20,7 +26,7 @@ import SortableRepeaterText from './SortableRepeaterText';
  * @param {Function} props.setAttributes Function that updates individual attributes.
  * @param {Element}  props.popoverAnchor Reference to anchor element.
  *
- * @return {Element} Element to render.
+ * @return {import('react').ReactElement} Element to render.
  */
 const Controls = ( { attributes, setAttributes, popoverAnchor } ) => {
 	// Memoize popoverProps to avoid returning a new object every time.

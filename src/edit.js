@@ -1,7 +1,17 @@
-import { useState } from '@wordpress/element';
-import { useBlockProps } from '@wordpress/block-editor';
+/**
+ * External dependencies
+ */
 import classNames from 'classnames';
 
+/**
+ * WordPress dependencies
+ */
+import { useState } from '@wordpress/element';
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * Internal dependencies
+ */
 import useTypewriter from './useTypeWriter';
 import InspectorControls from './components/InspectorControls';
 import BlockControls from './components/block-controls';
@@ -13,11 +23,11 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
- * @param {Object} props               - props object
- * @param {Object} props.attributes    - data stored by block
- * @param {Object} props.setAttributes - set data to be stored in block
+ * @param {Object}   props               Props object.
+ * @param {Object}   props.attributes    Available block attributes.
+ * @param {Function} props.setAttributes Function that updates individual attributes.
  *
- * @return {Element} Element to render.
+ * @return {import('react').ReactElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
 	const { prefix, strings, pauseTime, typeSpeed, deleteSpeed, loop, suffix } =

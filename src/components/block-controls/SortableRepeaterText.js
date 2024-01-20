@@ -1,4 +1,6 @@
-import { forwardRef, useState } from '@wordpress/element';
+/**
+ * External dependencies
+ */
 import {
 	closestCenter,
 	DndContext,
@@ -16,15 +18,19 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { restrictToParentElement } from '@dnd-kit/modifiers';
-import { dragHandle, cancelCircleFilled, plus } from '@wordpress/icons';
 import { v4 as uuidv4 } from 'uuid';
+import classNames from 'classnames';
+
+/**
+ * WordPress dependencies
+ */
+import { forwardRef, useState } from '@wordpress/element';
+import { dragHandle, cancelCircleFilled, plus } from '@wordpress/icons';
 import { TextControl, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import classNames from 'classnames';
 
 /** @typedef {import('react').ForwardedRef<HTMLElement>} Ref */
 /**
- * Item component.
  * Renders editable field which can be removed and dragged to change position
  *
  * @param {Object}   props            Component props.
@@ -38,7 +44,7 @@ import classNames from 'classnames';
  * @param {Object}   props.style      Draggable styles
  * @param {Ref}      ref              The forwarded ref to the item element.
  *
- * @return {Element} Element to render.
+ * @return {import('react').ReactElement} Element to render.
  */
 function UnforwardedItem(
 	{
@@ -109,7 +115,6 @@ Item.displayName = 'Item';
 /** @typedef {{index: number, value:string, setItem: Function, removeItem: Function}} SortableItemRestProps */
 
 /**
- * Sortable Item Component.
  * Add draggable functionality to Item component
  *
  * @param {Object}                props           Component props.
@@ -146,13 +151,13 @@ function SortableItem( { id, ...restProps } ) {
 }
 
 /**
- * SortableRepeaterText is used to display list of editable texts which are draggable.
+ * Display list of editable texts which are draggable.
  *
  * @param {Object}   props             Component props.
  * @param {Array}    props.texts       List of texts.
  * @param {Function} props.updateTexts Function which updates texts stored in attributes.
  *
- * @return {Element} Element to render.
+ * @return {import('react').ReactElement} Element to render.
  */
 function SortableRepeaterText( { texts, updateTexts: updateTextsProps } ) {
 	const [ items, setItems ] = useState(
