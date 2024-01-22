@@ -19,22 +19,17 @@ Create eye-catching animated typing text for your website when the block is used
 
 == Installation ==
 
-= Common: =
-1. Clone or download the repository to your local machine.
-2. Navigate to the block folder using the command line: `cd sg-typing-text-block`.
-3. Install the required dependencies using: `npm install`.
-4. Build the block using: `npm run build`.
-5. Zip the necessary files for plugin: `npm run plugin-zip`.
-6. Rename the zip file to sg-typing-text-block.zip
-
 = Upload: =
-1. In your admin area, go to the Plugins menu and click on **Add New**
-2. Click on **Upload Plugin** and choose the **`sg-typing-text-block.zip`** file and click on **Install Now**
-3. Activate the plugin and Enjoy!
+1. Download the latest tagged archive (choose the "zip" option).
+2. Go to the **Plugins -> Add New** screen and click the **Upload** tab.
+3. Upload the zipped archive directly.
+4. Go to the Plugins screen and click **Activate** and Enjoy!
 
 = Manually: =
-1. Extract and Upload the **sg-typing-text-block** plugin to the **`/wp-content/plugins/`** directory
-2. Activate the plugin through the Plugins menu in WordPress
+1. Download the latest tagged archive (choose the "zip" option).
+2. Unzip the archive.
+3. Copy the folder to your `/wp-content/plugins/` directory.
+4. Go to the Plugins screen and click **Activate** and Enjoy!.
 
 
 == Frequently Asked Questions ==
