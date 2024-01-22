@@ -1,6 +1,6 @@
 # SG Typing Text Block
 
-A Gutenberg block for showing typewriter animation for text
+> A Gutenberg block for showing typewriter animation for text
 
 ## Description
 
