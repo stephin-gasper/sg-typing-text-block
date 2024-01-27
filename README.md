@@ -28,7 +28,7 @@ Create eye-catching animated typing text for your website when the block is used
 3. Copy the folder to your `/wp-content/plugins/` directory.
 4. Go to the Plugins screen and click **Activate**.
 
-Check out the Codex for more information about [installing plugins manually](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
+Check out the Codex for more information about [installing plugins manually](https://wordpress.org/documentation/article/manage-plugins/#manual-plugin-installation-1).
 
 ### Git
 
