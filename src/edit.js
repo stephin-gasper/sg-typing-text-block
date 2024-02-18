@@ -30,8 +30,15 @@ import './editor.scss';
  * @return {import('react').ReactElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
-	const { prefix, strings, pauseTime, typeSpeed, deleteSpeed, loop, suffix } =
-		attributes;
+	const {
+		prefix = '',
+		strings,
+		pauseTime,
+		typeSpeed,
+		deleteSpeed,
+		loop,
+		suffix = '',
+	} = attributes;
 
 	// Use internal state instead of a ref to make sure that the component
 	// re-renders when the popover's anchor updates.
@@ -56,23 +63,33 @@ export default function Edit( { attributes, setAttributes } ) {
 				attributes={ attributes }
 				setAttributes={ setAttributes }
 			/>
-			<p className="sg-typing-text-wrapper" ref={ setPopoverAnchor }>
-				{ prefix }
-				{ strings.length ? (
-					<span className="sg-typing-text">
-						{ typedText }
-						<span
-							aria-hidden="true"
-							className={ classNames( 'sg-typing-text-cursor', {
-								blink: isTypingPaused,
-								hide: ! continueLoop,
-							} ) }
-						>
-							|
+			<p
+				className="sg-typing-text-wrapper"
+				ref={ setPopoverAnchor }
+				aria-label={ `${ prefix }${ strings?.join(
+					', '
+				) }${ suffix }` }
+			>
+				<span aria-hidden="true">
+					{ prefix }
+					{ strings.length ? (
+						<span className="sg-typing-text">
+							{ typedText }
+							<span
+								className={ classNames(
+									'sg-typing-text-cursor',
+									{
+										blink: isTypingPaused,
+										hide: ! continueLoop,
+									}
+								) }
+							>
+								|
+							</span>
 						</span>
-					</span>
-				) : null }
-				{ suffix }
+					) : null }
+					{ suffix }
+				</span>
 			</p>
 		</div>
 	);
