@@ -15,7 +15,7 @@
   "attributes": {
     "prefix": {
       "type": "string",
-      "default": "I'm a"
+      "default": "I am"
     },
     "strings": {
       "type": "array",
