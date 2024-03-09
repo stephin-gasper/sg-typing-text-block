@@ -65,7 +65,7 @@ Zip the necessary files for plugin using: `npm run plugin-zip`.
 
 ![Default](https://i.postimg.cc/d1zJvd1v/Default-view.png)
 ![Text editor](https://i.postimg.cc/pdLWBR4N/text-editor.png)
-![Toolbar more](https://i.postimg.cc/65t8FJG3/toolbar-more.png)
+![Toolbar more](https://i.postimg.cc/x1RjHcsy/toolbar-more.png)
 ![Toolbar more option clicked](https://i.postimg.cc/wB46fnY1/toolbar-more-option-clicked.png)
 
 ## Contributors
